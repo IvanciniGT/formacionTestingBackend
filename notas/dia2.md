@@ -638,11 +638,101 @@ En la industria del software encontramos fakes de muchos componentes estandar:
 - Fakes de servicios REST: JSON Server, etc.
 
 --- 
-Tratar de hacer una prueba: Queremos probar la funcion recuperarDatosDeUnAnimalito(ID) del AnimalitosService.
+Tratar de hacer una prueba: Queremos probar la funcion recuperarDatosDeUnAnimalito(ID) del AnimalitosService. HAPPY PATH
 Una prueba Unitaria
 
 DADO
+    Que tengo un AnimalitosRepositoryDeMentirijilla con un animalito dado de alta con datos:
+    - ID: ABCD-1234-EFGH-5678
+    - Nombre: Rocky
+    - Especie: Perro
+    - Raza: Labrador
+    - Edad: 2 años      
+    - Peso: 20 kg
+    - Nº Identificación: XXXXXXX
+    - Observaciones: Es un perro muy juguetón y cariñoso.   
+    - Fecha de alta: 10-10-2025
+    - Fecha de última modificación: 10-10-2025
+
+> DatosCompletosDeUnAnimalito animalitoDadoDeAlta = new DatosCompletosDeUnAnimalito(
+   "ABCD-1234-EFGH-5678","Rocky","Perro","Labrador",2,20,"XXXXXXX","Es un perro muy juguetón y cariñoso.","10-10-2025","10-10-2025"
+);
+> AnimalitosRepository animalitosRepositoryDeMentirijilla = new AnimalitosRepositoryDeMentirijilla();
+>  animalitosRepositoryDeMentirijilla.cuandoTeLlamenARecuperarDatosDeAnimalitoDevuelves(animalitoDadoDeAlta);
+
+    Que tenemos un AnimalitosService con ese AnimalitosRepositoryDeMentirijilla y un SistemaDeMensajeriaDeMentirijilla.
+
+> SistemaDeMensajeriaDeMentirijilla sistemaDeMensajeriaDeMentirijilla = new SistemaDeMensajeriaDeMentirijilla();
+> AnimalitosService animalitosService = new AnimalitosService(animalitosRepositoryDeMentirijilla, sistemaDeMensajeriaDeMentirijilla);
 
 CUANDO
 
+    Llamamos a la función recuperarDatosDeUnAnimalito del AnimalitosService, pasando el ID del animalito dado de alta como parámetro.
+
+> DatosCompletosDeUnAnimalito animalitoRecuperado = animalitosService.recuperarDatosDeUnAnimalito("ABCD-1234-EFGH-5678");
+
 ENTONCES
+
+    Se devuelve un objeto con los datos completos del animalito registrado, incluyendo :
+    - ID: ABCD-1234-EFGH-5678
+    - Nombre: Rocky
+    - Especie: Perro
+    - Raza: Labrador
+    - Edad: 2 años      
+    - Peso: 20 kg
+    - Nº Identificación: XXXXXXX
+    - Observaciones: Es un perro muy juguetón y cariñoso.   
+    - Fecha de alta: 10-10-2025
+    - Fecha de última modificación: 10-10-2025
+
+> assertEquals("ABCD-1234-EFGH-5678", animalitoRecuperado.getId());
+> assertEquals("Rocky", animalitoRecuperado.getNombre());
+> assertEquals("Perro", animalitoRecuperado.getEspecie());
+> assertEquals("Labrador", animalitoRecuperado.getRaza());
+> assertEquals(2, animalitoRecuperado.getEdad());
+> assertEquals(20, animalitoRecuperado.getPeso());
+> assertEquals("XXXXXXX", animalitoRecuperado.getNumeroIdentificacion());
+> assertEquals("Es un perro muy juguetón y cariñoso.", animalitoRecuperado.getObservaciones());
+> assertEquals("10-10-2025", animalitoRecuperado.getFechaAlta());
+> assertEquals("10-10-2025", animalitoRecuperado.getFechaDeUltimaModificacion());
+
+---
+
+Ahora vamos a por otra.. Pero... SUBIMOS EL LISTON!
+Vamos a hacer una prueba de integración... para la función registrarAnimalito del AnimalitosService... pero esta vez, con un AnimalitosRepository de verdad: AnimalitosRepositoryMySQL... con una BBDD de verdad... y con un SistemaDeMensajeria de mentirijilla...
+
+DADO
+Que tengo una BBDD real
+Y que tengo un Repositorio de verdad que trabaja con esa BBDD real
+Y que tengo un sistema de mensajería de mentira
+Y que tengo un animalitos service con ese repositorio de verdad y ese sistema de mensajería de mentira
+Y que tengo los datos de un nuevo animalito que son guays:
+    - Nombre: Rocky
+    - Especie: Perro
+    - Raza: Labrador
+    - Edad: 2 años
+    - Peso: 20 kg
+    - Nº Identificación: XXXXXXX
+    - Observaciones: Es un perro muy juguetón y cariñoso.   
+CUANDO
+    Llamo a la función registrarAnimalito del AnimalitosService, pasando los datos del animalito guays como parámetro.
+ENTONCES
+    - Que la funcion me sigue devolviendo un objeto con los datos completos del animalito registrado, incluyendo el ID único generado automáticamente, la fecha de alta y la fecha de última modificación.
+    - Que en la BBDD real se ha dado de alta un nuevo registro con los datos del animalito guays, incluyendo el ID único generado automáticamente, la fecha de alta y la fecha de última modificación.
+
+Aquí no compruebo si el sistema de mensajería es invocado. Eso ya lo sé... ya lo comprobé en la unitaria..
+Es más, en este caso voy a usar un DUMMY del sistema de mensajería:
+
+```java
+public class SistemaDeMensajeriaDeMentirijilla3 implements SistemaDeMensajeriaService { // Dummy
+    @Override
+    public void mandarNotificacion(DatosDeAltaDeUnAnimalito animalito) {
+        // No hago nada... ni me importa si me llaman o no... ni con qué datos      
+    }
+}
+```
+
+Un dummy hace que vaya más rápido.
+
+Servicio de Animalitos          UTF-8
+BBDD                            ISO-8859-1
