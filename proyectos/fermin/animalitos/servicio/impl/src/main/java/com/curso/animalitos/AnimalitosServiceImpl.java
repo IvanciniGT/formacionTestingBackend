@@ -18,4 +18,21 @@ public class AnimalitosServiceImpl implements AnimalitosService {
         return animalitoRegistrado;
     }
 
+    @Override
+    public DatosCompletosAnimalito recuperarAnimalito(String id) {
+        return repositorio.recuperarAnimalitoDeLaBBDD(id);
+    }
+
+    @Override
+    public DatosCompletosAnimalito modificarAnimalito(String id, DatosRegistroAnimalito datosNuevos) {
+        DatosCompletosAnimalito animalitoModificado = repositorio.actualizarAnimalitoEnBBDD(id, datosNuevos);
+        sistemaDeMensajeria.enviarNotificacion(animalitoModificado);
+        return animalitoModificado;
+    }
+
+    @Override
+    public void borrarAnimalito(String id) {
+        repositorio.borrarAnimalitoDeLaBBDD(id);
+    }
+
 }
