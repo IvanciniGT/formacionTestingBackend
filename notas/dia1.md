@@ -30,6 +30,7 @@
   - Número de pruebas nuevas pasadas
   - Número de pruebas nuevas falladas
   - Número de nuevas pruebas definidas
+- Las pruebas me ayudan a tener un buen diseño del sistema. Si las hago a tiempo... y las hago bien... me van a ayudar a tener un buen diseño del sistema.
 - ...
 
 # Tipos de pruebas

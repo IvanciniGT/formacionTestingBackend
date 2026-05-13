@@ -1,0 +1,12 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "disabled",
+    "java.autobuild.enabled": false,
+    "java.jdt.ls.java.home": "/usr/local/Cellar/openjdk@21/21.0.10/libexec/openjdk.jdk/Contents/Home",
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "/usr/local/Cellar/openjdk@21/21.0.10/libexec/openjdk.jdk/Contents/Home"
+        }
+    ]
+}
