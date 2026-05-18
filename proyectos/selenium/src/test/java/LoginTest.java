@@ -111,4 +111,32 @@ class LoginTest {
         navegador.quit();
     }
 
+    @Test // Meter mal la contraseña, pero bien el usuario.
+    void loginWrongPasswordCorrectUser() {
+        WebDriver navegador = new ChromeDriver();
+        WebDriverWait espera = new WebDriverWait(navegador, Duration.ofSeconds(10)); // Le configuramos un timeout (límite).
+        navegador.get("https://katalon-demo-cura.herokuapp.com/");
+        navegador.findElement(By.xpath("//*[text()='Make Appointment']")).click();
+        espera.until(ExpectedConditions.urlToBe("https://katalon-demo-cura.herokuapp.com/profile.php#login"));
+
+        String textoDelTitulo = navegador.findElement(By.xpath("//h2")).getText();
+        Assertions.assertEquals("Login", textoDelTitulo);
+        // Rellena el campo de username con: John Doe
+        navegador.findElement(By.id("txt-username")).sendKeys("John Doe");
+        // Rellena el campo de password con: ThisIsNotAPassword
+        navegador.findElement(By.id("txt-password")).sendKeys("RUINA!");
+        // Antes de hacer click, voy a tomar una foto de la pantalla, con los datos rellenos:
+        tomarCaptura(navegador, "loginWrongPasswordCorrectUser", "conLosDatosRellenos");
+        navegador.findElement(By.id("btn-login")).click();
+
+        //<p class="lead text-danger">Login failed! Please ensure the username and password are valid.</p>
+        try{ // El de dentro puede dar error.
+            espera.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Login failed')]")));
+        } finally { // De error o no, quiero capturar la pantalla, para ver qué ha pasado.
+            tomarCaptura(navegador, "loginWrongPasswordCorrectUser", "despuesDeLogin");    
+        }
+        // Cerramos el navegador
+        navegador.quit();
+    }
+
 }
