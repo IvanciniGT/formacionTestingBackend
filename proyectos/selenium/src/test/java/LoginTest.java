@@ -2,6 +2,8 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -20,7 +22,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 class LoginTest {
-    
+
+    private WebDriver navegador;
+    private WebDriverWait espera;
+
     @BeforeAll // Ejecutate antes de hacer las pruebas
     static void prepararPruebas(){
         // Vamos a crear una carpeta para guardar las capturas de pantalla, si no existe ya
@@ -29,6 +34,13 @@ class LoginTest {
             carpetaCapturas.mkdir();   
         } 
     }
+
+    // los navegadores los podemos abrir en modo "headless", es decir, sin mostrar la ventana, 
+    // 1. para que no molesten mientras se ejecutan las pruebas.
+    // 2. porque estas pruebas se ejecutarán finalmente en un entorno sin interfaz gráfica, como un servidor linux.
+    //    No habrá ventana, pero el navegador seguirá funcionando y podremos interactuar con él. Incluso tomar capturas de pantalla.
+    //    En un navegador en modo headless, la "ventana" se pinta en memoria, pero no se muestra en la pantalla.
+
 
     void tomarCaptura(WebDriver navegador, String funcion, String trabajoCocnreto) {
         // Generamos un timestamp, con formato: año-mes-dia-hora-minuto-segundo
@@ -44,14 +56,33 @@ class LoginTest {
         }
     }
 
+    @BeforeEach // Ejecutate antes de cada prueba
+    void prepararNavegador() {
+        // Dado que tengo un navegador chrome
+        // Puedo abrir el navegador con algunas opciones de configuración, como el modo headless.
+        // No todos los navegadores admiten las mismas opciones, así que hay que revisar la documentación de cada uno para ver qué opciones tiene.
+        ChromeOptions opciones = new ChromeOptions();
+        opciones.addArguments("--headless=new"); // Modo headless, sin mostrar la ventana. (en versiones anteriores de chrome era "--headless" a secas)
+        // Más cosas:
+        // opciones.addArguments("--incognito"); // Modo incógnito, sin guardar cookies ni historial.
+        // opciones.addArguments("--start-maximized"); // Abrir el navegador maximizado.
+        // opciones.addArguments("--disable-gpu"); // Deshabilitar la aceleración por hardware, que a veces da problemas en modo headless.
+        opciones.addArguments("--window-size=1920,1080"); // Establecer el tamaño de la ventana, que en modo headless no se establece automáticamente.
+        navegador = new ChromeDriver(opciones);
+        espera = new WebDriverWait(navegador, Duration.ofSeconds(10)); // Le configuramos un timeout (límite).
+        // y que el usuario va a la pantalla de home de la app:  https://katalon-demo-cura.herokuapp.com/
+        navegador.get("https://katalon-demo-cura.herokuapp.com/");
+    }
+
+    @AfterEach // Ejecutate después de cada prueba
+    void cerrarNavegador() {
+        // Cerramos el navegador
+        navegador.quit();
+    }
+
 
     @Test
     void loginHappyPath() {
-        // Dado que tengo un navegador chrome
-        WebDriver navegador = new ChromeDriver();
-        WebDriverWait espera = new WebDriverWait(navegador, Duration.ofSeconds(10)); // Le configuramos un timeout (límite).
-        // y que el usuario va a la pantalla de home de la app:  https://katalon-demo-cura.herokuapp.com/
-        navegador.get("https://katalon-demo-cura.herokuapp.com/");
         // Hace clic en el botón "Make Appointment"
         // Puedo buscar el elemento por su id: btn-make-appointment
         // navegador.findElement(By.id("btn-make-appointment")).click();
@@ -107,15 +138,10 @@ class LoginTest {
         // cuyo título es: Make Appointment
         textoDelTitulo = navegador.findElement(By.xpath("//h2")).getText();
         Assertions.assertEquals("Make Appointment", textoDelTitulo);
-        // Cerramos el navegador
-        navegador.quit();
     }
 
     @Test // Meter mal la contraseña, pero bien el usuario.
     void loginWrongPasswordCorrectUser() {
-        WebDriver navegador = new ChromeDriver();
-        WebDriverWait espera = new WebDriverWait(navegador, Duration.ofSeconds(10)); // Le configuramos un timeout (límite).
-        navegador.get("https://katalon-demo-cura.herokuapp.com/");
         navegador.findElement(By.xpath("//*[text()='Make Appointment']")).click();
         espera.until(ExpectedConditions.urlToBe("https://katalon-demo-cura.herokuapp.com/profile.php#login"));
 
@@ -135,8 +161,12 @@ class LoginTest {
         } finally { // De error o no, quiero capturar la pantalla, para ver qué ha pasado.
             tomarCaptura(navegador, "loginWrongPasswordCorrectUser", "despuesDeLogin");    
         }
-        // Cerramos el navegador
-        navegador.quit();
     }
+    // Meter mal el usuario, pero no la contraseña
+    // Meter mal ambos
+    // Usuario bueno y password vacio
+    // Usuario vacio y password bueno
+    // usuario y password vacios
+    
 
 }
