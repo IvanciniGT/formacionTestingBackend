@@ -129,4 +129,3 @@ class MakeAppointmentTest {
     }
 
 }
-        } finally { // De error o no, quiero capturar la pantalla, para ver qué ha pasado.
