@@ -8,8 +8,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+// import org.openqa.selenium.chrome.ChromeDriver; // COMENTADO: modo standalone usa RemoteWebDriver
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,7 +70,13 @@ class LoginTest {
         // opciones.addArguments("--start-maximized"); // Abrir el navegador maximizado.
         // opciones.addArguments("--disable-gpu"); // Deshabilitar la aceleración por hardware, que a veces da problemas en modo headless.
         opciones.addArguments("--window-size=1920,1080"); // Establecer el tamaño de la ventana, que en modo headless no se establece automáticamente.
-        navegador = new ChromeDriver(opciones);
+        // navegador = new ChromeDriver(opciones); // COMENTADO: modo standalone
+        // Conectamos al Selenium Grid standalone (http://localhost:8082 → puerto externo del contenedor)
+        try {
+            navegador = new RemoteWebDriver(new URL("http://localhost:8082"), opciones);
+        } catch (java.net.MalformedURLException e) {
+            throw new RuntimeException("URL del Grid Selenium no válida", e);
+        }
         espera = new WebDriverWait(navegador, Duration.ofSeconds(10)); // Le configuramos un timeout (límite).
         // y que el usuario va a la pantalla de home de la app:  https://katalon-demo-cura.herokuapp.com/
         navegador.get("https://katalon-demo-cura.herokuapp.com/");
