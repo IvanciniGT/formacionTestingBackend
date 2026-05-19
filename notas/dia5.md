@@ -6,7 +6,7 @@ Es una herramienta de análisis estático de código.
 
 Si mi proyecto se crea desde JAVA/MAVEN, maven tiene integración directa con sonar.
 
-    $ mvn sonar:sonar -Dsonar.projectKey=fermin -Dsonar.host.url=http://localhost:8081 -Dsonar.token=sqa_b31ffca82aa7bed42a4e701ed5a23e5976f1c11b
+    $ mvn sonar:sonar -Dsonar.projectKey=fermin -Dsonar.host.url=http://108.131.96.29:8081 -Dsonar.token=sqa_b31ffca82aa7bed42a4e701ed5a23e5976f1c11b
 
 Lo mismo aplica si mi proyecto es de JavaScript/NodeJS, o de Python, C#, etc.
 

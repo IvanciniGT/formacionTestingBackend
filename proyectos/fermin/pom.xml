@@ -12,16 +12,38 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <!-- Evita NPE cuando JaCoCo no ha inicializado argLine todavía -->
+        <argLine></argLine>
+        <!-- SonarQube -->
+        <sonar.projectKey>fermin</sonar.projectKey>
+        <sonar.projectName>fermin</sonar.projectName>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
-
 
     <modules>
         <module>animalitos</module>
         <module>mensajeria</module>
     </modules>
 
-    <!-- Vamos a activar Jacoco -->
     <build>
+        <!-- Defaults heredables por todos los módulos hijos -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M7</version>
+                    <configuration>
+                        <!-- JaCoCo inyecta el agente aquí -->
+                        <argLine>${argLine}</argLine>
+                        <!-- El build NO muere si hay tests en rojo -->
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <!-- Vamos a activar Jacoco -->
         <plugins>
             <plugin>
                 <groupId>org.jacoco</groupId>

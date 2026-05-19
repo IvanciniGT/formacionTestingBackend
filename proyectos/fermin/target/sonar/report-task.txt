@@ -1,0 +1,6 @@
+projectKey=fermin
+serverUrl=http://108.131.96.29:8081
+serverVersion=26.5.0.122743
+dashboardUrl=http://108.131.96.29:8081/dashboard?id=fermin
+ceTaskId=9810e676-5d83-4e0c-acc2-c7edaebb9ad5
+ceTaskUrl=http://108.131.96.29:8081/api/ce/task?id=9810e676-5d83-4e0c-acc2-c7edaebb9ad5
