@@ -72,3 +72,39 @@ Si mis pruebas solo prueban el caso condicion1=true
 - Cobertura de lineas: 3 lineas he ejecutado... 1 no
   Si he ejecutado: tarea1, tarea2, tarea3... pero no he ejecutado tarea4, entonces tengo una cobertura de lineas del 75% (3 de 4) 
 - Cobertura de ramas: 1 rama he ejecutado (condicion1=true) y 1 no (condicion1=false), entonces tengo una cobertura de ramas del 50% (1 de 2)
+
+---
+
+En la realidad, jenkins se usa de otra forma.
+
+Una instalación de jenkins hoy en dia BUENA para por tener KUBERNETES.
+El jenkins se monta ahi.. pero cada trabajo que ejecuta lo hace en un contenedor .
+
+Podemos montarlo sin kubernetes... y trabajar con docker... pero es que es más chapucero.. si se cae la maquina de docker.. me quedo sin jenkins.
+
+---
+
+# Cucumber
+
+Cucumbewr es una librería de pruebas.. similar a lo que sería JUnit.
+Cuál es la gracia?
+
+La gracia está en que las pruebas las definimos con un lenguaje llamado gherkin, que es un lenguaje muy sencillo, parecido al humano.
+
+```gherkin
+Característica: Registrar animalitos
+
+Escenario: Registrar animalito con datos válidos
+    Dado que tengo un animalito con nombre "Rocky" y especie "Perro"
+    Cuando registro el animalito
+    Entonces el registro es exitoso y el animalito queda registrado en el sistema
+```
+
+Básicamente se trata de empezar las frases por las palabras :
+- Característica:
+- Escenario:
+- Dado...
+- Cuando...
+- Entonces...
+
+Si hay valores de datos, que sean textos, los ponemos en comillas dobles, para que se puedan usar luego en el código.

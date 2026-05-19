@@ -46,6 +46,33 @@
             <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- añado la dependencia de Cucumber para pruebas BDD -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.11.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!--Cucumber para JUNIT JUPITER-->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.11.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!--Junit platfoprm -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-api</artifactId>
+            <version>1.9.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+            <version>1.9.3</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <!-- cambiar el plugin de las pruebas para que se ejecuten las pruebas de la api -->
@@ -65,3 +92,4 @@
     </build>
 
 </project>
+

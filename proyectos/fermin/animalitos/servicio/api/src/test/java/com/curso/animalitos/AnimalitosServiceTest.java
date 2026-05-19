@@ -726,7 +726,7 @@ abstract class AnimalitosServiceTest {
     // =====================================================================================
     // recuperarAnimalito - Casos adicionales
     // =====================================================================================
-*/
+
     @Test
     @DisplayName("Recuperar animalito con ID nulo - debe lanzar excepción")
     void testRecuperarAnimalito_IdNulo() {
@@ -735,7 +735,7 @@ abstract class AnimalitosServiceTest {
         // CUANDO + ENTONCES:
         Assertions.assertThrows(Exception.class, () -> miAnimalitosService.recuperarAnimalito(null));
     }
-/*
+
     @Test
     @DisplayName("Recuperar animalito con ID vacío ('') - debe lanzar excepción")
     void testRecuperarAnimalito_IdVacio() {
