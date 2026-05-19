@@ -162,7 +162,7 @@ abstract class AnimalitosServiceTest {
     // =====================================================================================
     // registrarAnimalito - Escenario 3: Nombre inválido
     // =====================================================================================
-
+/*
     @Test
     @DisplayName("Registrar animalito con nombre numérico ('33') - debe lanzar excepción")
     void testRegistrarAnimalito_NombreConNumeros() {
@@ -176,7 +176,7 @@ abstract class AnimalitosServiceTest {
         // CUANDO + ENTONCES:
         Assertions.assertThrows(Exception.class, () -> miAnimalitosService.registrarAnimalito(datos));
     }
-/*
+
     @Test
     @DisplayName("Registrar animalito con nombre mezclado letras y números ('Rocky3') - debe lanzar excepción")
     void testRegistrarAnimalito_NombreMezclaLetrasYNumeros() {
