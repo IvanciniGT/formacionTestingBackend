@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnimalitosServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">animalitos-servicio-impl</a> &gt; <a href="index.source.html" class="el_package">com.curso.animalitos</a> &gt; <span class="el_source">AnimalitosServiceImpl.java</span></div><h1>AnimalitosServiceImpl.java</h1><pre class="source lang-java linenums">package com.curso.animalitos;
+
+public class AnimalitosServiceImpl implements AnimalitosService {
+
+    private final AnimalitosRepository repositorio;
+    private final SistemaDeMensajeria sistemaDeMensajeria;
+
+    public AnimalitosServiceImpl(AnimalitosRepository repositorio,
+<span class="fc" id="L9">                                 SistemaDeMensajeria sistemaDeMensajeria) {</span>
+<span class="fc" id="L10">            this.repositorio = repositorio;</span>
+<span class="fc" id="L11">            this.sistemaDeMensajeria = sistemaDeMensajeria;</span>
+<span class="fc" id="L12">    }</span>
+
+    @Override
+    public DatosCompletosAnimalito registrarAnimalito(DatosRegistroAnimalito datosGuays) {
+<span class="fc" id="L16">        DatosCompletosAnimalito animalitoRegistrado =repositorio.guardarAnimalitoEnBBDD(datosGuays);</span>
+<span class="fc" id="L17">        sistemaDeMensajeria.enviarNotificacion(animalitoRegistrado);</span>
+<span class="fc" id="L18">        return animalitoRegistrado;</span>
+    }
+
+    @Override
+    public DatosCompletosAnimalito recuperarAnimalito(String id) {
+<span class="fc" id="L23">        return repositorio.recuperarAnimalitoDeLaBBDD(id);</span>
+    }
+
+    @Override
+    public DatosCompletosAnimalito modificarAnimalito(String id, DatosRegistroAnimalito datosNuevos) {
+<span class="fc" id="L28">        DatosCompletosAnimalito animalitoModificado = repositorio.actualizarAnimalitoEnBBDD(id, datosNuevos);</span>
+<span class="fc" id="L29">        sistemaDeMensajeria.enviarNotificacion(animalitoModificado);</span>
+<span class="fc" id="L30">        return animalitoModificado;</span>
+    }
+
+    @Override
+    public void borrarAnimalito(String id) {
+<span class="fc" id="L35">        repositorio.borrarAnimalitoDeLaBBDD(id);</span>
+<span class="fc" id="L36">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

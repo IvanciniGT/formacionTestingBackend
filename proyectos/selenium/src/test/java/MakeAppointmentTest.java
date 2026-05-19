@@ -50,6 +50,14 @@ class MakeAppointmentTest {
     static Stream<MutableCapabilities> navegadores() {
         ChromeOptions chrome = new ChromeOptions();
         chrome.addArguments("--headless=new", "--window-size=1920,1080");
+        // Desactivar el gestor de contraseñas y los avisos de contraseña insegura/vulnerada
+        // (el típico "Cambia tu contraseña" y el bocadillo de "Guardar contraseña")
+        java.util.Map<String, Object> prefs = new java.util.HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("profile.password_manager_leak_detection", false);
+        chrome.setExperimentalOption("prefs", prefs);
+        chrome.addArguments("--disable-features=PasswordLeakDetection,PasswordManagerOnboarding,AutofillServerCommunication");
 
         EdgeOptions edge = new EdgeOptions();
         edge.addArguments("--headless=new", "--window-size=1920,1080");
@@ -104,11 +112,15 @@ class MakeAppointmentTest {
         navegador.findElement(By.id("chk_hospotal_readmission")).click();
         // Marcamos el checkbox "Medicaid"
         navegador.findElement(By.id("radio_program_medicaid")).click();
-        // Fecha la de hoy
+        // Fecha la de hoy.
+        // Usamos JavaScript para establecer el valor directamente porque los date pickers de Bootstrap
+        // no responden bien a sendKeys() en modo headless (el campo queda vacío y el form no se envía).
         String fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         System.out.println("Fecha que voy a introducir: " + fecha);
-        navegador.findElement(By.id("txt_visit_date")).click();
-        navegador.findElement(By.id("txt_visit_date")).sendKeys(fecha);
+        org.openqa.selenium.WebElement campoFecha = navegador.findElement(By.id("txt_visit_date"));
+        ((org.openqa.selenium.JavascriptExecutor) navegador).executeScript(
+            "arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('change'));",
+            campoFecha, fecha);
         // Rellenamos el campo de comentarios con: "Esto es un comentario de prueba"
         navegador.findElement(By.id("txt_comment")).sendKeys("Esto es un comentario de prueba");
         // Antes de hacer click, voy a tomar una foto de la pantalla, con los datos

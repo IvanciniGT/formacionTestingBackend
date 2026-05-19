@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.curso.animalitos.AnimalitosServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 68, Failures: 45, Errors: 0, Skipped: 0, Time elapsed: 2.466 s <<< FAILURE! - in com.curso.animalitos.AnimalitosServiceImplTest
-com.curso.animalitos.AnimalitosServiceImplTest.testRecuperarAnimalito_IdNulo  Time elapsed: 0.101 s  <<< FAILURE!
+Tests run: 68, Failures: 45, Errors: 0, Skipped: 0, Time elapsed: 4.627 s <<< FAILURE! - in com.curso.animalitos.AnimalitosServiceImplTest
+com.curso.animalitos.AnimalitosServiceImplTest.testRecuperarAnimalito_IdNulo  Time elapsed: 0.272 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -79,7 +79,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaSoloEspacios  Time elapsed: 0.009 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaSoloEspacios  Time elapsed: 0.012 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -156,7 +156,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NumeroIdentificacionDemasiaoLargo  Time elapsed: 0.004 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NumeroIdentificacionDemasiaoLargo  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -233,7 +233,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieVacia  Time elapsed: 0.004 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieVacia  Time elapsed: 0.013 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -310,7 +310,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_ObservacionesDemasiaoLargas  Time elapsed: 0.005 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_ObservacionesDemasiaoLargas  Time elapsed: 0.008 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -387,7 +387,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EdadNegativa  Time elapsed: 0.004 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EdadNegativa  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -464,7 +464,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaNula  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaNula  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -618,7 +618,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRecuperarAnimalito_IdVacio  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRecuperarAnimalito_IdVacio  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -772,7 +772,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaVacia  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaVacia  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -849,7 +849,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_IdSoloEspacios  Time elapsed: 0.003 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_IdSoloEspacios  Time elapsed: 0.013 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -926,7 +926,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieInvalida_NoGuardaEnBBDD  Time elapsed: 0.031 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieInvalida_NoGuardaEnBBDD  Time elapsed: 0.116 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 animalitosRepository.guardarAnimalitoEnBBDD(
@@ -1008,7 +1008,7 @@ But invoked here:
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieNula  Time elapsed: 0.003 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieNula  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -1162,7 +1162,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreDemasiaoLargo  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreDemasiaoLargo  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -1393,7 +1393,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_NombreInvalido_NoEnviaNotificacion  Time elapsed: 0.004 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_NombreInvalido_NoEnviaNotificacion  Time elapsed: 0.014 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 sistemaDeMensajeria.enviarNotificacion(
@@ -1475,7 +1475,7 @@ But invoked here:
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreMezclaLetrasYNumeros  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreMezclaLetrasYNumeros  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -1552,7 +1552,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_EspecieVacia  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_EspecieVacia  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -1788,7 +1788,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_NombreInvalido_NoLlamaAlRepositorio  Time elapsed: 0.004 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_NombreInvalido_NoLlamaAlRepositorio  Time elapsed: 0.003 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 animalitosRepository.actualizarAnimalitoEnBBDD(
@@ -1948,7 +1948,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRecuperarAnimalito_IdSoloEspacios  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRecuperarAnimalito_IdSoloEspacios  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -2102,7 +2102,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaConCaracteresEspeciales  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaConCaracteresEspeciales  Time elapsed: 0.014 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -2179,7 +2179,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdSoloEspacios  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdSoloEspacios  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -2333,7 +2333,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_NombreInvalido  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_NombreInvalido  Time elapsed: 0.006 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -2410,7 +2410,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdVacio_NoLlamaAlRepositorio  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdVacio_NoLlamaAlRepositorio  Time elapsed: 0.014 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 animalitosRepository.borrarAnimalitoDeLaBBDD(
@@ -2574,7 +2574,7 @@ But invoked here:
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreVacio  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreVacio  Time elapsed: 0.013 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -2651,7 +2651,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EdadNegativa_NoGuardaEnBBDD  Time elapsed: 0.003 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EdadNegativa_NoGuardaEnBBDD  Time elapsed: 0.002 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 animalitosRepository.guardarAnimalitoEnBBDD(
@@ -2733,7 +2733,7 @@ But invoked here:
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaDemasiaoLarga  Time elapsed: 0.001 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_RazaDemasiaoLarga  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -2810,7 +2810,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdVacio  Time elapsed: 0.003 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdVacio  Time elapsed: 0.002 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -3041,7 +3041,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreInvalido_NoGuardaEnBBDD  Time elapsed: 0.003 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreInvalido_NoGuardaEnBBDD  Time elapsed: 0.004 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 animalitosRepository.guardarAnimalitoEnBBDD(
@@ -3123,7 +3123,7 @@ But invoked here:
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdNulo_NoLlamaAlRepositorio  Time elapsed: 0.004 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testBorrarAnimalito_IdNulo_NoLlamaAlRepositorio  Time elapsed: 0.005 s  <<< FAILURE!
 org.mockito.exceptions.verification.NeverWantedButInvoked: 
 
 animalitosRepository.borrarAnimalitoDeLaBBDD(
@@ -3205,7 +3205,7 @@ But invoked here:
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieDemasiaoLarga  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_EspecieDemasiaoLarga  Time elapsed: 0.014 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -3282,7 +3282,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_PesoNegativo  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testModificarAnimalito_PesoNegativo  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
@@ -3359,7 +3359,7 @@ org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, 
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreSoloEspacios  Time elapsed: 0.002 s  <<< FAILURE!
+com.curso.animalitos.AnimalitosServiceImplTest.testRegistrarAnimalito_NombreSoloEspacios  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.lang.Exception to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)

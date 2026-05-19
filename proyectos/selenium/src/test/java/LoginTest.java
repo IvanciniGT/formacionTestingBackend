@@ -39,6 +39,20 @@ class LoginTest {
         } 
     }
 
+    void tomarCaptura(String funcion, String trabajoCocnreto) {
+        // Generamos un timestamp, con formato: año-mes-dia-hora-minuto-segundo
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss"));
+        // Concatenamos el timestamp con el nombre de la función y el trabajo concreto, para generar un nombre de archivo único
+        String nombreArchivo = funcion + "-" + trabajoCocnreto + "-" + timestamp + ".png";
+        // Tomamos la captura de pantalla y la guardamos en la carpeta "capturas" con el nombre que nos han dado
+        File captura = ((TakesScreenshot) navegador).getScreenshotAs(OutputType.FILE);
+        try {
+            Files.copy(captura.toPath(), new File("capturas/" + nombreArchivo).toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Fuente de navegadores para @ParameterizedTest.
     // El Grid enruta cada sesión al nodo con el navegador pedido → cada test se ejecuta en Chrome, Edge y Firefox a la vez.
     static Stream<MutableCapabilities> navegadores() {
@@ -55,20 +69,6 @@ class LoginTest {
         return Stream.of(chrome, edge, firefox);
     }
 
-
-    void tomarCaptura(String funcion, String trabajoCocnreto) {
-        // Generamos un timestamp, con formato: año-mes-dia-hora-minuto-segundo
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss"));
-        // Concatenamos el timestamp con el nombre de la función y el trabajo concreto, para generar un nombre de archivo único
-        String nombreArchivo = funcion + "-" + trabajoCocnreto + "-" + timestamp + ".png";
-        // Tomamos la captura de pantalla y la guardamos en la carpeta "capturas" con el nombre que nos han dado
-        File captura = ((TakesScreenshot) navegador).getScreenshotAs(OutputType.FILE);
-        try {
-            Files.copy(captura.toPath(), new File("capturas/" + nombreArchivo).toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     // @ParameterizedTest + @MethodSource hacen que JUnit ejecute este test una vez por cada navegador
     // devuelto por navegadores(). El Grid recibe las 3 sesiones y las distribuye a chrome/edge/firefox en paralelo.
